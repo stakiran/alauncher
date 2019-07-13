@@ -6,12 +6,25 @@ Create your alias with the single ini file for Windows.
 - "github.com/stretchr/testify/assert" for unittest
 - "github.com/go-ini/ini" for ini operation
 
+## Installation
+
+```
+$ go get github.com/stakiran/alauncher
+```
+
+If you want to use an alias of alauncher, like this:
+
+```
+[ala]
+rawbin=alauncher %*
+```
+
 ## Usage
 
 ### Firstly, create the ini file.
 
 ```
-$ ala
+$ alauncher
 The ini file 'C:\Users\XXXXXXXX\.ala.ini' not found, so create firstly.
 ```
 
@@ -23,19 +36,19 @@ The ini file 'C:\Users\XXXXXXXX\.ala.ini' not found, so create firstly.
 After editing, Do `ala` command to create aliases from the ini file.
 
 ```
-$ ala
+$ alauncher
 ```
 
 You can also use dryrun.
 
 ```
-$ ala -dryrun
+$ alauncher -dryrun
 ```
 
 Edit the ini file with your editor.
 
 ```
-$ ala -edit
+$ alauncher -edit
 ```
 
 ## About the ini file
