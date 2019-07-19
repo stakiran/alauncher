@@ -33,7 +33,7 @@ The ini file 'C:\Users\XXXXXXXX\.ala.ini' not found, so create firstly.
 - Add your aliaes.
 
 ### Build and so on.
-After editing, Do `ala` command to create aliases from the ini file.
+After editing, Do `alauncher` command to create aliases from the ini file.
 
 ```
 $ alauncher
@@ -163,7 +163,7 @@ Use `ignore_this=true`, do not create the batch file.
 ## Q: Is it possible that use prefix or suffix spaces?
 Ans: possible.
 
-Use `%s` variable. This is alauncher's system variable.
+Use `%s%` variable. This is alauncher's system variable.
 
 Ini:
 
