@@ -17,7 +17,7 @@ import (
 )
 
 const ProductName = "alauncher"
-const ProductVersion = "0.0.1"
+const ProductVersion = "0.1.0"
 
 const AlaIniName = ".ala.ini"
 
@@ -248,6 +248,7 @@ func NewVariableDeployer(loaded *ini.File) VariableDeployer {
 
 func (deployer *VariableDeployer) AddAlaVariables() {
 	deployer.kv["s"] = " ";
+	deployer.kv["n"] = "\n";
 }
 
 func (deployer *VariableDeployer) Deploy(beforestr string) string {

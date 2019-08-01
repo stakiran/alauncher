@@ -100,6 +100,11 @@ func TestVariableDeployerAlaVaribles(t *testing.T) {
 
 	assert.Equal(t, deployer.Deploy(`prompt $$%s%`), `prompt $$ `)
 	assert.Equal(t, deployer.Deploy(`%prefixsuffixspace_with_alavar_s%`), ` hoge `)
+	assert.Equal(t, deployer.Deploy(`echo %cd%%n%echo %s%VVV%s%%n%cd ..%n%echo %cd%`), `echo %cd%
+echo  VVV 
+cd ..
+echo %cd%`)
+
 }
 
 func TestGenerator(t *testing.T) {
@@ -109,6 +114,7 @@ func TestGenerator(t *testing.T) {
 	}
 
 	deployer := NewVariableDeployer(cfg)
+	deployer.AddAlaVariables()
 
 	// case1:
 	// rawbin with disabling setlocal
@@ -163,6 +169,23 @@ pushd c:\windows
 start "" "c:\windows\notepad.exe" system.ini
 
 popd`
+	assert.Equal(t, actual, expect)
+
+	// case4: ala variables
+
+	sec = cfg.Section("bat_ala_variables")
+	command = NewCommand()
+	command.ImportFromGoIni(sec)
+	gen = NewGenerator(command, deployer)
+	actual = gen.Generate()
+	expect = `@echo off
+
+
+
+echo %cd%
+echo  VVV 
+cd ..
+echo %cd%`
 	assert.Equal(t, actual, expect)
 
 }

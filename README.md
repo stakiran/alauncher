@@ -160,10 +160,10 @@ Use `ignore_this=true`, do not create the batch file.
 
 ## FAQ
 
-## Q: Is it possible that use prefix or suffix spaces?
+### Q: Is it possible that use prefix or suffix spaces?
 Ans: possible.
 
-Use `%s%` variable. This is alauncher's system variable.
+Use `%s%` variable. This is alauncher's system variable and means a space.
 
 Ini:
 
@@ -193,6 +193,48 @@ $ echo Yeah!
 Yeah!
 
 $ 
+```
+
+### Q: Is it possible that multi-line alias?
+Ans: possible.
+
+Use `%n%` variable. This is alauncher's system variable and means a `\n`.
+
+Ini:
+
+```
+[b]
+rawbin=echo %cd%%n%echo %s%VVV%s%%n%cd ..%n%echo %cd%
+disable=setlocal
+```
+
+b.bat:
+
+```
+$ type b.bat
+@echo off
+
+
+
+echo %cd%
+echo  VVV 
+cd ..
+echo %cd%
+```
+
+Use:
+
+```
+$ cd
+c:\work\dir1\dir2
+
+$ b
+c:\work\dir1\dir2
+ VVV
+c:\work\dir1
+
+$ cd
+c:\work\dir1
 ```
 
 ## How to develop
