@@ -13,7 +13,7 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/go-ini/ini"
+	"gopkg.in/ini.v1"
 )
 
 const ProductName = "alauncher"

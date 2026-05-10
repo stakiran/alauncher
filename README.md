@@ -9,7 +9,7 @@ Create your alias with the single ini file for Windows.
 ## Installation
 
 ```
-$ go get github.com/stakiran/alauncher
+$ go install github.com/stakiran/alauncher@latest
 ```
 
 If you want to use an alias of alauncher, like this:
