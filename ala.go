@@ -17,7 +17,7 @@ import (
 )
 
 const ProductName = "alauncher"
-const ProductVersion = "0.1.0"
+const ProductVersion = "0.1.1"
 
 const AlaIniName = ".ala.ini"
 
